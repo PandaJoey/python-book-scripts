@@ -178,9 +178,67 @@ if 'blackberry' in fav_fruit:
 if 'gooseberrys' in fav_fruit:
     print("you really like gooseberrys")
 
-"""
-
 requested_toppings = ['mushrooms', 'green peppers', 'extra cheese']
 for requested_topping in requested_toppings:
-    print(f"Adding {requested_topping}.")
+    if requested_topping == 'green peppers':
+        print("Sorry, we are out of green peppers right now.")
+    else:
+        print(f"Adding {requested_topping}.")
 print("\nFinished making your pizza!")
+
+#checking the list isnt empty
+requested_toppings = []
+if requested_toppings:
+    for requested_topping in requested_toppings:
+        print(f"Adding {requested_topping}.")
+    print("\nFinished making your pizza!")
+else:
+    print("Are you sure you want a plain pizza?")
+"""
+
+#checking multiple lists
+available_toppings = ['mushrooms', 'olives', 'green peppers',
+'pepperoni', 'pineapple', 'extra cheese']
+requested_toppings = ['mushrooms', 'french fries', 'extra cheese']
+for requested_topping in requested_toppings:
+    if requested_topping in available_toppings:
+        print(f"Adding {requested_topping}.")
+    else:
+        print(f"Sorry, we don't have {requested_topping}.")
+print("\nFinished making your pizza!")
+
+#ex 5.8
+
+users = ["admin", "support", "accounts", "HR", "RnD", "marketing"]
+if users:
+    for user in users:
+        if user == "admin":
+            print("Hello admin, would you like to see a status report?")
+        else:
+            print(f"Hello, {user} department")
+else:
+    print("Sorry the users list is empty")
+
+"""
+5-10. Checking Usernames: Do the following to create a program that simulates
+how websites ensure that everyone has a unique username.
+•Make a list of five or more usernames called current_users.
+•Make another list of five usernames called new_users. Make sure one or
+two of the new usernames are also in the current_users list.
+•Loop through the new_users list to see if each new username has already
+been used. If it has, print a message that the person will need to enter a
+new username. If a username has not been used, print a message saying
+that the username is available.
+•Make sure your comparison is case insensitive. If 'John' has been used,
+'JOHN' should not be accepted. (To do this, you’ll need to make a copy of
+current_users containing the lowercase versions of all existing users.)
+"""
+current_users = ["admin", "support", "accounts", "HR", "RnD", "marketing"]
+new_users = ["warehouse", "support", "dispatch", "delivery", "goods in", "marketing"]
+
+
+for user in new_users:
+    if user in current_users:
+        print(f"sorry {user} is already in use")
+    else:
+        print(f"welcome {user}")
